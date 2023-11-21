@@ -6,7 +6,7 @@ class ResponsiveButton extends StatelessWidget {
   bool? isResponsive;
   double? width;
 
-  ResponsiveButton({super.key, this.width = 120, this.isResponsive = false});
+  ResponsiveButton({super.key, this.width = 120.0, this.isResponsive = false});
 
   @override
   Widget build(BuildContext context) {

@@ -63,30 +63,28 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 height: 20,
               ),
               //tabbar
-              Container(
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: TabBar(
-                    labelPadding: const EdgeInsets.only(left: 20, right: 20),
-                    controller: _tabController,
-                    labelColor: Colors.black,
-                    unselectedLabelColor: Colors.grey,
-                    isScrollable: true,
-                    indicatorSize: TabBarIndicatorSize.label,
-                    indicator: CircleTabIndicator(
-                        color: AppColors.mainColor, radius: 4),
-                    tabs: const [
-                      Tab(
-                        text: "Places",
-                      ),
-                      Tab(
-                        text: "Inspiration",
-                      ),
-                      Tab(
-                        text: "Emotions",
-                      ),
-                    ],
-                  ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: TabBar(
+                  labelPadding: const EdgeInsets.only(left: 20, right: 20),
+                  controller: _tabController,
+                  labelColor: Colors.black,
+                  unselectedLabelColor: Colors.grey,
+                  isScrollable: true,
+                  indicatorSize: TabBarIndicatorSize.label,
+                  indicator:
+                      CircleTabIndicator(color: AppColors.mainColor, radius: 4),
+                  tabs: const [
+                    Tab(
+                      text: "Places",
+                    ),
+                    Tab(
+                      text: "Inspiration",
+                    ),
+                    Tab(
+                      text: "Emotions",
+                    ),
+                  ],
                 ),
               ),
               Container(
@@ -101,7 +99,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     ListView.builder(
                       itemCount: info.length,
                       scrollDirection: Axis.horizontal,
-                      itemBuilder: (BuildContext context, int index) {
+                      itemBuilder: (BuildContext context, index) {
                         return GestureDetector(
                           onTap: () {
                             BlocProvider.of<AppCubits>(context)
@@ -115,9 +113,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               borderRadius: BorderRadius.circular(20),
                               color: Colors.white,
                               image: DecorationImage(
-                                image: NetworkImage(
-                                    "http://mark.bslmeivu.com/uploads/" +
-                                        info[index].img),
+                                image: NetworkImage(info[index].img),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -173,7 +169,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 color: Colors.white,
                                 image: DecorationImage(
                                   image: AssetImage(
-                                      "img/" + images.keys.elementAt(index)),
+                                      "img/${images.keys.elementAt(index)}"),
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -181,11 +177,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             const SizedBox(
                               height: 10,
                             ),
-                            Container(
-                              child: AppText(
-                                text: images.values.elementAt(index),
-                                color: AppColors.textColor2,
-                              ),
+                            AppText(
+                              text: images.values.elementAt(index),
+                              color: AppColors.textColor2,
                             )
                           ],
                         ),

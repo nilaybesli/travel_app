@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/widgets/app_text.dart';
 
-import '../colors.dart';
-
 class AppButtons extends StatelessWidget {
   final Color color;
   final Color backgroundColor;
@@ -37,17 +35,17 @@ class AppButtons extends StatelessWidget {
       ),
       child: isIcon == false
           ? Center(
-            child: AppText(
+              child: AppText(
                 text: text!,
                 color: color,
               ),
-          )
+            )
           : Center(
-            child: Icon(
+              child: Icon(
                 icon,
                 color: color,
               ),
-          ),
+            ),
     );
   }
 }

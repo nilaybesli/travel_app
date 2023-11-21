@@ -1,10 +1,9 @@
 import 'dart:convert';
-
 import 'package:http/http.dart' as http;
 import 'package:travel_app/model/data_model.dart';
 
 class DataServices {
-  String baseUrl = "http://mark.bslmeiyu.com/api";
+  String baseUrl = "http://10.0.2.2:5000";
 
   Future<List<DataModel>> getInfo() async {
     var apiUrl = '/getplaces';

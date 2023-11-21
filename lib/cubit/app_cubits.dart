@@ -3,27 +3,27 @@ import 'package:travel_app/cubit/app_cubit_states.dart';
 import 'package:travel_app/model/data_model.dart';
 import 'package:travel_app/services/data_services.dart';
 
-class AppCubits extends Cubit<CubitStates>{
-  AppCubits({required this.data}): super(InitialState()){
+class AppCubits extends Cubit<CubitStates> {
+  AppCubits({required this.data}) : super(InitialState()) {
     emit(WelcomeState());
   }
-final DataServices data;
+
+  final DataServices data;
   late final places;
-  void getData() async{
-    try{
+
+  void getData() async {
+    try {
       emit(LoadingState());
       places = await data.getInfo();
       emit(LoadedState(places));
-
-    }catch(e){
-
-    }
+    } catch (e) {}
   }
-  detailPage(DataModel data){
+
+  detailPage(DataModel data) {
     emit(DetailState(data));
   }
-  goHome(){
+
+  goHome() {
     emit(LoadedState(places));
   }
-
 }

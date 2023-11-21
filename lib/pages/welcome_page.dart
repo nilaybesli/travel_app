@@ -33,7 +33,7 @@ class _WelcomePageState extends State<WelcomePage> {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
-                    "img/" + images[index],
+                    "img/${images[index]}",
                   ),
                   fit: BoxFit.cover,
                 ),
@@ -67,7 +67,7 @@ class _WelcomePageState extends State<WelcomePage> {
                           onTap: () {
                             BlocProvider.of<AppCubits>(context).getData();
                           },
-                          child: Container(
+                          child: SizedBox(
                             width: 200,
                             child: Row(
                               children: [
